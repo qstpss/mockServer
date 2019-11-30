@@ -12,6 +12,16 @@ import java.util.Date;
 @Entity
 @Table(name = "MOCK_EVENT")
 public class MockEvent {
+    //TODO: add constraint - we can add the entity with the same TYPE only if there are other entities which have the same TYPE and STATUS = CANCELED
+
+    private MockEvent(){
+    }
+
+    public MockEvent(@NotNull Type type) {
+        this.type = type;
+        this.status = Status.PENDING;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -44,10 +54,6 @@ public class MockEvent {
 
     public Type getType() {
         return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
     }
 
     public Status getStatus() {
