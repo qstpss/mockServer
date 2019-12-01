@@ -15,8 +15,12 @@ import java.util.List;
 @Transactional
 @Service
 public class MockEventServiceImpl implements MockEventService {
+
     @Autowired
     private MockEventRepository mockEventRepository;
+
+    @Autowired
+    private LogService logService;
 
     @Override
     public MockEvent save(MockEvent mockEvent) throws NotUniqueEventException {
@@ -25,7 +29,9 @@ public class MockEventServiceImpl implements MockEventService {
         if (allActiveEqualEventsByType.isEmpty()) {
             return mockEventRepository.save(mockEvent);
         } else {
-            throw new NotUniqueEventException();
+            NotUniqueEventException notUniqueEventException = new NotUniqueEventException();
+            logService.writeError(notUniqueEventException.getMessage());
+            throw notUniqueEventException;
         }
 
     }
