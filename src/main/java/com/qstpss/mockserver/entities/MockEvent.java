@@ -12,7 +12,6 @@ import java.util.Date;
 @Entity
 @Table(name = "MOCK_EVENT")
 public class MockEvent {
-    //TODO: add constraint - we can add the entity with the same TYPE only if there are other entities which have the same TYPE and STATUS = CANCELED
 
     private MockEvent(){
     }
