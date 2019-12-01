@@ -1,7 +1,7 @@
 package com.qstpss.mockserver.jparepositories;
 
-import com.qstpss.mockserver.Type;
-import com.qstpss.mockserver.entities.MockEvent;
+import com.qstpss.mockserver.model.Type;
+import com.qstpss.mockserver.model.entities.MockEvent;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

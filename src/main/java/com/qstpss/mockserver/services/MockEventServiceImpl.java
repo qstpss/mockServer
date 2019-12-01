@@ -1,6 +1,6 @@
 package com.qstpss.mockserver.services;
 
-import com.qstpss.mockserver.entities.MockEvent;
+import com.qstpss.mockserver.model.entities.MockEvent;
 import com.qstpss.mockserver.exceptions.NotUniqueEventException;
 import com.qstpss.mockserver.jparepositories.MockEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;

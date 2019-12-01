@@ -1,7 +1,7 @@
-package com.qstpss.mockserver.entities;
+package com.qstpss.mockserver.model.entities;
 
-import com.qstpss.mockserver.Status;
-import com.qstpss.mockserver.Type;
+import com.qstpss.mockserver.model.Status;
+import com.qstpss.mockserver.model.Type;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;

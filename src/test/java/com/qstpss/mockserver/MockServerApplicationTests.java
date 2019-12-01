@@ -1,6 +1,8 @@
 package com.qstpss.mockserver;
 
-import com.qstpss.mockserver.entities.MockEvent;
+import com.qstpss.mockserver.model.Status;
+import com.qstpss.mockserver.model.Type;
+import com.qstpss.mockserver.model.entities.MockEvent;
 import com.qstpss.mockserver.exceptions.NotUniqueEventException;
 import com.qstpss.mockserver.services.MockEventService;
 import org.junit.jupiter.api.Test;
