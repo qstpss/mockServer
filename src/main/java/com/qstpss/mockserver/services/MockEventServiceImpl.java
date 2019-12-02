@@ -24,9 +24,9 @@ public class MockEventServiceImpl implements MockEventService {
 
     @Override
     public MockEvent save(MockEvent mockEvent) throws NotUniqueEventException {
-        List<MockEvent> allActiveEqualEventsByType =
-                mockEventRepository.getAllActiveEqualEventsByType(mockEvent.getType());
-        if (allActiveEqualEventsByType.isEmpty()) {
+        MockEvent activeEvent =
+                mockEventRepository.getActiveEventByType(mockEvent.getType());
+        if (activeEvent == null) {
             return mockEventRepository.save(mockEvent);
         } else {
             NotUniqueEventException notUniqueEventException = new NotUniqueEventException();
@@ -45,5 +45,10 @@ public class MockEventServiceImpl implements MockEventService {
     public List<MockEvent> getAll() {
         return new ArrayList<>(
                 (Collection<? extends MockEvent>) mockEventRepository.findAll());
+    }
+
+    @Override
+    public MockEvent update(MockEvent mockEvent) {
+        return mockEventRepository.save(mockEvent);
     }
 }

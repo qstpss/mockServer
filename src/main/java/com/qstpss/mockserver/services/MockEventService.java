@@ -7,6 +7,10 @@ import java.util.List;
 
 public interface MockEventService {
     MockEvent save(MockEvent mockEvent) throws NotUniqueEventException;
+
     MockEvent getById(Long id);
+
     List<MockEvent> getAll();
+
+    MockEvent update(MockEvent mockEvent);
 }
