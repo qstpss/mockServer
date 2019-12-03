@@ -1,5 +1,6 @@
 package com.qstpss.mockserver.services;
 
+import com.qstpss.mockserver.model.Type;
 import com.qstpss.mockserver.model.entities.MockEvent;
 import com.qstpss.mockserver.exceptions.NotUniqueEventException;
 
@@ -13,4 +14,8 @@ public interface MockEventService {
     List<MockEvent> getAll();
 
     MockEvent update(MockEvent mockEvent);
+
+    MockEvent getActiveEvent(Type type);
+
+    List<MockEvent> getAllActiveEvents();
 }

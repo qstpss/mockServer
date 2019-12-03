@@ -1,5 +1,6 @@
 package com.qstpss.mockserver.services;
 
+import com.qstpss.mockserver.model.Type;
 import com.qstpss.mockserver.model.entities.MockEvent;
 import com.qstpss.mockserver.exceptions.NotUniqueEventException;
 import com.qstpss.mockserver.jparepositories.MockEventRepository;
@@ -50,5 +51,15 @@ public class MockEventServiceImpl implements MockEventService {
     @Override
     public MockEvent update(MockEvent mockEvent) {
         return mockEventRepository.save(mockEvent);
+    }
+
+    @Override
+    public MockEvent getActiveEvent(Type type) {
+        return mockEventRepository.getActiveEventByType(type);
+    }
+
+    @Override
+    public List<MockEvent> getAllActiveEvents() {
+        return mockEventRepository.getAllActiveEvents();
     }
 }
