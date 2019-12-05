@@ -37,7 +37,6 @@ public class MockEventController {
         mockEvent.setStatus(Status.IN_PROGRESS);
         mockEvent.setStartTimestamp(new Date());
         return mockEventService.update(mockEvent);
-        //FIXME: mockEventService.update creates a new object instead of to update the old one
     }
 
     @ResponseStatus(HttpStatus.OK)
