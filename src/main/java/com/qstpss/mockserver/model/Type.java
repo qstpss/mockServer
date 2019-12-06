@@ -1,4 +1,4 @@
-package com.qstpss.mockserver;
+package com.qstpss.mockserver.model;
 
 public enum  Type {
     MUTE_MEDIA,

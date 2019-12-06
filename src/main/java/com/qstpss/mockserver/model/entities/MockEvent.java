@@ -1,7 +1,7 @@
-package com.qstpss.mockserver.entities;
+package com.qstpss.mockserver.model.entities;
 
-import com.qstpss.mockserver.Status;
-import com.qstpss.mockserver.Type;
+import com.qstpss.mockserver.model.Status;
+import com.qstpss.mockserver.model.Type;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -12,6 +12,15 @@ import java.util.Date;
 @Entity
 @Table(name = "MOCK_EVENT")
 public class MockEvent {
+
+    private MockEvent(){
+    }
+
+    public MockEvent(@NotNull Type type) {
+        this.type = type;
+        this.status = Status.PENDING;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -44,10 +53,6 @@ public class MockEvent {
 
     public Type getType() {
         return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
     }
 
     public Status getStatus() {
