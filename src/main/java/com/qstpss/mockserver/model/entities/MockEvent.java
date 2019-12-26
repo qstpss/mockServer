@@ -47,6 +47,17 @@ public class MockEvent {
     @Column(name = "END_TIMESTAMP")
     private Date endTimestamp;
 
+    @Column(name = "MESSAGE")
+    private String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public Long getId() {
         return id;
     }
